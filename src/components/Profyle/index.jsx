@@ -15,12 +15,21 @@ export default function Profyle({
   return (
     <div className={s.container}>
       <h1>Male</h1>
-
-      <div className={s.block}>
+      {/* <img src={link} alt="Profyle" width="125px" height="144px" />
+      <p className={s.name}>{name[0].toUpperCase() + name.slice(1)}</p> */}
+      {/* <p>{gender}</p> */}
+      {/* <button onClick={() => deleteProfyle(id)}>DELETE</button> */}
+      {maleUser.length > 0 ? (
+        <CardMale maleUser={maleUser} deleteProfyle={deleteProfyle} />
+      ) : (
+        ""
+      )}
+      {/* <CardMale maleUser={maleUser} deleteProfyle={deleteProfyle} /> */}
+      {/* <div className={s.block}>
         {maleUser.map((elem) => (
           <CardMale key={elem.id} {...elem} deleteProfyle={deleteProfyle} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

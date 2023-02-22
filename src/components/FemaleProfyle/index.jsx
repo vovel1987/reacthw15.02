@@ -14,11 +14,21 @@ export default function FemaleProfyle({
   return (
     <div className={s.container}>
       <h1>Female</h1>
-      <div className={s.block}>
+      {/* <img src={link} alt="Profyle" width="125px" height="144px" />
+      <p className={s.name}>{name[0].toUpperCase() + name.slice(1)}</p>
+       <p>{gender}</p> 
+      <button onClick={() => deleteProfyle(id)}>DELETE</button>  */}
+      {femaleUser.length > 0 ? (
+        <CardFemale femaleUser={femaleUser} deleteProfyle={deleteProfyle} />
+      ) : (
+        ""
+      )}
+      {/* <CardFemale femaleUser={femaleUser} deleteProfyle={deleteProfyle} /> */}
+      {/* <div className={s.block}>
         {femaleUser.map((elem) => (
           <CardFemale key={elem.id} {...elem} deleteProfyle={deleteProfyle} />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
