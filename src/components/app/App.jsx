@@ -2,24 +2,14 @@ import AddUser from "../AddUser";
 import { useEffect, useState } from "react";
 import Profyle from "../Profyle";
 import FemaleProfyle from "../FemaleProfyle";
-import s from './style.module.css'
+import s from "./style.module.css";
 
 function App() {
   const [data, setData] = useState(
     () => JSON.parse(localStorage.getItem("data")) ?? []
   );
 
-  useEffect(() => localStorage.setItem("data", JSON.stringify(data)),[data]);
-
-  const genders = [
-    { id: 1, gender: "Male" },
-    {
-      id: 2,
-      gender: "Female",
-    },
-  ];
-
-  const value = genders.map((elem) => elem.gender);
+  useEffect(() => localStorage.setItem("data", JSON.stringify(data)), [data]);
 
   const profileCreate = (name, link, gender) => {
     const newProfile = {
@@ -43,8 +33,8 @@ function App() {
         <AddUser profileCreate={profileCreate} />
       </div>
       <div>
-        <Profyle  data={data} deleteProfyle={deleteProfyle}/>
-        <FemaleProfyle data={data} deleteProfyle={deleteProfyle}/>
+        <Profyle data={data} deleteProfyle={deleteProfyle} />
+        <FemaleProfyle data={data} deleteProfyle={deleteProfyle} />
       </div>
 
       {/* <div>
